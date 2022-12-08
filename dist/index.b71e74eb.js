@@ -532,7 +532,56 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"h7u1C":[function(require,module,exports) {
-console.log("hi there");
+// import { User } from './User';
+// import { Company } from './Company';
+var _customMap = require("./CustomMap");
+new (0, _customMap.CustomMap)("map");
+
+},{"./CustomMap":"4qzxZ"}],"4qzxZ":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "CustomMap", ()=>CustomMap);
+class CustomMap {
+    constructor(divId){
+        this.googleMap = new google.maps.Map(document.getElementById(divId), {
+            zoom: 1,
+            center: {
+                lat: 0,
+                lng: 0
+            }
+        });
+    }
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"h5q1v"}],"h5q1v":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
 
 },{}]},["gX1po","h7u1C"], "h7u1C", "parcelRequire94c2")
 
